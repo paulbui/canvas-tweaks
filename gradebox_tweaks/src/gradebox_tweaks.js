@@ -39,12 +39,8 @@ var GradeBoxTweaks = function(config) {
                     console.log('The ' + mutation.attributeName + ' attribute was modified.');
 
                 }
-                // Later, you can stop observing
-                if (document.activeElement === gradeBox)
-                {
-                    observer.disconnect();
-                }
-                else
+
+                if (document.activeElement !== document.getElementById('speed_grader_comment_textarea'))
                 {
                     gradeBox.focus();
                 }
@@ -59,7 +55,7 @@ var GradeBoxTweaks = function(config) {
 
     }
 
-    //TODO: modify the mechanism of submitting and advancing
+    //TODO: modify the mechanism of submitting and advancing so it does not rely on QuizWiz
     //TODO: add Ctrl-Enter keyboard shortcut
     if (config.enterAdvance)
     {
