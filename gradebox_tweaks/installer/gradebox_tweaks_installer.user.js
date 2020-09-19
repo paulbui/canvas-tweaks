@@ -18,7 +18,7 @@
   
     if (typeof GradeBoxTweaks !== 'function') {
       const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/gh/paulbui/canvas-tweaks/gradebox_tweaks/src/gradebox_tweaks.js';
+      script.src = 'https://cdn.jsdelivr.net/gh/paulbui/canvas-tweaks@master/gradebox_tweaks/src/gradebox_tweaks.js';
       script.onload = function() {
         GradeBoxTweaks(config);
       };
