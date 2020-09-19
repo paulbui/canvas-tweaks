@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Autoselect Grade Box | Enter-Advance
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/paulbui/canvas-tweaks
 // @version      0.1
-// @description  Test MutationObserver
+// @description  Auto-select grade box in SpeedGrader | Enter in Grade box submits and advances to next student
 // @author       Paul Bui
 // @match        https://*.instructure.com/courses/*/gradebook/speed_grader?*
 // @grant        none
