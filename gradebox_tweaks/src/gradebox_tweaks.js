@@ -40,6 +40,12 @@ var GradeBoxTweaks = function(config) {
 
                 }
                 gradeBox.focus();
+
+                // Later, you can stop observing
+                if (document.activeElement === gradeBox)
+                {
+                    observer.disconnect();
+                }
             }
         };
 
@@ -48,9 +54,6 @@ var GradeBoxTweaks = function(config) {
 
         // Start observing the target node for configured mutations
         observer.observe(gradeBox, config);
-
-        // Later, you can stop observing
-        //observer.disconnect();
 
     }
 
