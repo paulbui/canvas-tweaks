@@ -32,6 +32,7 @@ var GradeBoxTweaks = function(config) {
         const callback = function(mutationsList, observer) {
             // Use traditional 'for loops' for IE 11
             for(const mutation of mutationsList) {
+                /*
                 if (mutation.type === 'childList') {
                     console.log('A child node has been added or removed.');
                 }
@@ -39,7 +40,7 @@ var GradeBoxTweaks = function(config) {
                     console.log('The ' + mutation.attributeName + ' attribute was modified.');
 
                 }
-
+                */
                 if (document.activeElement !== document.getElementById('speed_grader_comment_textarea'))
                 {
                     gradeBox.focus();
