@@ -39,12 +39,14 @@ var GradeBoxTweaks = function(config) {
                     console.log('The ' + mutation.attributeName + ' attribute was modified.');
 
                 }
-                gradeBox.focus();
-
                 // Later, you can stop observing
                 if (document.activeElement === gradeBox)
                 {
                     observer.disconnect();
+                }
+                else
+                {
+                    gradeBox.focus();
                 }
             }
         };
