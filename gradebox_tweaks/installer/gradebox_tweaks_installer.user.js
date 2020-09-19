@@ -18,7 +18,7 @@
   
     if (typeof GradeBoxTweaks !== 'function') {
       const script = document.createElement('script');
-      script.src = 'https://gitcdn.link/repo/jamesjonesmath/canvancement/master/quizzes/quizwiz/src/qw-engine.js';
+      script.src = 'https://raw.githubusercontent.com/paulbui/canvas-tweaks/master/gradebox_tweaks/src/gradebox_tweaks.user.js';
       script.onload = function() {
         GradeBoxTweaks(config);
       };
