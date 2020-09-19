@@ -1,26 +1,29 @@
-// ==UserScript==
-// @name         Autoselect Grade Box | Enter-Advance
-// @namespace    https://github.com/paulbui/canvas-tweaks
-// @version      0.1
-// @description  Auto-select grade box in SpeedGrader | Enter in Grade box submits and advances to next student
-// @author       Paul Bui
-// @match        https://*.instructure.com/courses/*/gradebook/speed_grader?*
-// @grant        none
-// ==/UserScript==
+/*
+ * GradeBoxTweaks adds additional efficiency shortcuts to the Canvas Speedgrader grade box
+ *
+ * It was developed by Paul Bui
+ *
+ * This is the script source that does all of the work, but should not be directly installed.
+ * It is loaded by a separate user script that installed into Tampermonkey.
+ *
+ * See https://github.com/paulbui/canvas-tweaks
+ *
+ */
 
-
-(function() {
+var GradeBoxTweaks = function(config) {
     'use strict';
 
-    //by default, both features are turned on (change true to false if you want it turned off)
-    var config = {
-        autoSelect: false,
-        enterAdvance: true
-    };
+    if (typeof config === 'undefined') {
+        //by default, both features are turned on (change true to false if you want it turned off)
+        var config = {
+            autoSelect: true,
+            enterAdvance: true
+        };
+    }
 
     const gradeBox = document.getElementById('grading-box-extended');
 
-    if (config.autoSelect)
+    if (gradeBox && config.autoSelect)
     {
         // Options for the observer (which mutations to observe)
         const config = { attributes: true, childList: true, subtree: true };
@@ -51,6 +54,8 @@
 
     }
 
+    //TODO: modify the mechanism of submitting and advancing
+    //TODO: add Ctrl-Enter keyboard shortcut
     if (config.enterAdvance)
     {
         gradeBox.addEventListener("keyup", function(e) {
