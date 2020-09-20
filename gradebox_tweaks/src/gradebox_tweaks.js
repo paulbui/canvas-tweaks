@@ -56,12 +56,10 @@ var GradeBoxTweaks = function (config) {
     observer.observe(gradeBox, config);
   }
 
-  //TODO: modify the mechanism of submitting and advancing so it does not rely on QuizWiz
-  //TODO: add Ctrl-Enter keyboard shortcut
-  if (config.enterAdvance) {
+  if (gradeBox && config.enterAdvance) {
     gradeBox.addEventListener("keyup", (event) => {
-      if (event.keyCode === 13) {
-        var commentButton = document.getElementsById("comment_submit_button");
+      if (event.isComposing || event.keyCode === 13) {
+        var commentButton = document.getElementById("comment_submit_button");
         if (commentButton) {
           commentButton.dispatchEvent(
             new Event("click", {
@@ -70,7 +68,7 @@ var GradeBoxTweaks = function (config) {
           );
         }
 
-        var nextStudentButton = document.getElementsById("student");
+        var nextStudentButton = document.getElementById("next-student-button");
         if (nextStudentButton) {
           nextStudentButton.dispatchEvent(
             new Event("click", {
@@ -78,6 +76,32 @@ var GradeBoxTweaks = function (config) {
             })
           );
         }
+      }
+    });
+  }
+
+  var commentArea = document.getElementById("speed_grader_comment_textarea");
+  if (commentArea && config.enterAdvance) {
+    commentArea.addEventListener("keyup", (event) => {
+      if (event.ctrlKey && event.keyCode === 13) {
+        var commentButton = document.getElementById("comment_submit_button");
+        if (commentButton) {
+          commentButton.dispatchEvent(
+            new Event("click", {
+              bubbles: true,
+            })
+          );
+        }
+        var nextStudentButton = document.getElementById("next-student-button");
+        if (nextStudentButton) {
+          nextStudentButton.dispatchEvent(
+            new Event("click", {
+              bubbles: true,
+            })
+          );
+        }
+        gradeBox = document.getElementById("grading-box-extended");
+        gradeBox.focus();
       }
     });
   }
