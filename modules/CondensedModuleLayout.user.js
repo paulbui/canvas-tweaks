@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name         Condensed Module Layout
+// @name         Condensed Modules & Assignments Layout
 // @namespace    https://github.com/paulbui/canvas-tweaks
-// @version      0.1
-// @description  Condensed layout of the Canvas Modules page
+// @version      0.2
+// @description  Condensed layout of the Canvas Modules & Assignments page
 // @author       Paul Bui
 // @match        http*://*/courses/*/modules
+// @match        http*://*/courses/*/assignments
 // @grant        none
 // @run-at       document-body
 // ==/UserScript==
