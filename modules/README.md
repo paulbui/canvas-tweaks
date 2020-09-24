@@ -11,4 +11,4 @@ The Condensed Module Layout userscript overrides the Canvas Modules page's CSS t
 ![Before condensed layout](https://raw.githubusercontent.com/paulbui/canvas-tweaks/master/modules/img/beforeCondensedLayout.png)
 
 # After
-![After condensed layout](https://raw.githubusercontent.com/paulbui/canvas-tweaks/master/modules/img/afterCondensedLayout.png
+![After condensed layout](https://raw.githubusercontent.com/paulbui/canvas-tweaks/master/modules/img/afterCondensedLayout.png)
