@@ -1,5 +1,5 @@
 # Description
-The Condensed Module Layout userscript overrides the module page's CSS to reduce the margins, padding, and font-size for a more condensed layout.
+The Condensed Module Layout userscript overrides the Canvas Modules page's CSS to reduce the margins, padding, and font-size for a more condensed layout.
 
 # Installation Instructions
 1. Install the https://www.tampermonkey.net/ extension or add-on
