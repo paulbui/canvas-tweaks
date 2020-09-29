@@ -19,7 +19,7 @@
     sheet.innerHTML += ".item-group-condensed {padding : 0px !important;}";
     sheet.innerHTML += ".item-group-condensed .ig-header {padding : 0px 0px !important; margin-top: 1px !important;}";
     sheet.innerHTML += ".ig-list .ig-row {padding: 1px 0px 1px 0px !important;}";
-    sheet.innerHTML += ".ig-list {font-size : 0.9rem !important;}"
+    sheet.innerHTML += ".ig-list {font-size : 0.9rem !important;}";
     sheet.innerHTML += ".locked_title {font-size : 1rem !important;}";
     document.body.appendChild(sheet);
 
