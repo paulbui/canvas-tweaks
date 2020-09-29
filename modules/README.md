@@ -1,5 +1,5 @@
 # Description
-The Condensed Modules & Assignments Layout userscript overrides the Canvas Modules and Assignments pages' CSS to reduce the margins, padding, and font-size for a more condensed layout.
+The Condensed MAQ Layout userscript overrides the Canvas Modules, Assignments, and Quizzes pages' CSS to reduce the margins, padding, and font-size for a more condensed layout.
 
 # Installation Instructions
 1. Install the https://www.tampermonkey.net/ extension or add-on
