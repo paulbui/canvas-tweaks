@@ -1,6 +1,9 @@
 # canvas-tweaks
 Tampermonkey / Greasemonkey Userscripts for Instructure Canvas
 
+## Course Shortcuts
+* Adds shortcuts to your courses to the top of your Canvas pages
+
 ## Grade Box Tweaks
 * Auto-select grade box in SpeedGrader
 * Enter in Grade box submits and advances to next student
