@@ -14,10 +14,12 @@
 
   //YOU SHOULD MODIFY THE FOLLOWING LIST OF COURSE NAMES AND COURSE ID NUMBERS!
   //"COURSE_NAME" : COURSE_ID # that is found in the URL after the word "courses"
+  //A comma should be at the end of the line unless it's the last entry
   var courseNumDict = {
       "AP CS A" : 59098,
       "IB CS 1" : 59216,
       "IB CS 2" : 59218
+      //You can add more courses...
   };
 
   //DO NOT MODIFY ANYTHING BELOW THIS COMMENT
