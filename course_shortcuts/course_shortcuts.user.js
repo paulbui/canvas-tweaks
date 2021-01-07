@@ -21,7 +21,9 @@
 
   //DO NOT MODIFY ANYTHING BELOW THIS COMMENT
 
-  if (document.location.href.indexOf("speed_grader") != -1 || document.body.classList.contains("is-inside-submission-frame"))
+  if (document.location.href.indexOf("speed_grader") != -1
+        || document.body.classList.contains("quizzes-speedgrader")
+        || document.body.classList.contains("is-inside-submission-frame"))
   {
       return;
   }
