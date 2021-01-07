@@ -12,3 +12,4 @@ The course_shortcuts userscript adds shortcuts to your courses to the top of you
 ![After course shortcuts added](https://raw.githubusercontent.com/paulbui/canvas-tweaks/master/course_shortcuts/img/courseShortcutsAdded.png)
 
 # Where to find Canvas course ID number?
+![Course ID number](https://raw.githubusercontent.com/paulbui/canvas-tweaks/master/course_shortcuts/img/courseIDnum.png)
