@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Course Shortcuts
 // @namespace    https://github.com/paulbui
-// @version      0.1
+// @version      0.2
 // @description  Add tabs for different courses at the top of the screen
 // @author       Paul Bui
 // @match        https://*.instructure.com/courses/*
 // @grant        none
+// @updateURL    https://github.com/paulbui/canvas-tweaks/raw/master/course_shortcuts/course_shortcuts.user.js
 // ==/UserScript==
 
 (function() {
