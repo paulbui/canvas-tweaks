@@ -8,6 +8,7 @@ The course_shortcuts userscript adds shortcuts to your courses to the top of you
 4. You will need to modify the script with your course names and numbers. Course ID numbers are found in the URL address of your course after the word "courses" (see image below)
     1. Go to the Tampermonkey extension -> Dashboard -> Course Shortcuts
     2. You will see a list of courses and ID numbers that you can edit and add to
+    3. Be sure to save your edits by going to File->Save in the Tampermonkey editor
 5. If you wish to turn off the userscript, then go to the TamperMonkey extension, untoggle the script, and refresh the page
 
 # Where to find Canvas course ID number?
