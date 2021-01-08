@@ -9,3 +9,6 @@ The speedgrader_status userscript adds the ability to modify the assignment stat
 
 # After installation
 ![Speedgrader status](https://github.com/paulbui/canvas-tweaks/raw/master/speedgrader_status/img/speedgraderStatus.png)
+
+# Source code forked from
+https://blog.ohheybrian.com/2019/05/adding-assignment-statuses-to-the-canvas-speedgrader/
