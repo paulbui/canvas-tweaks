@@ -25,6 +25,7 @@
   {
       return;
   }
+  
 
   var wrapper = document.getElementById("wrapper");
   if (wrapper)
