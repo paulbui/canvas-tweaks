@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         Course Shortcuts
 // @namespace    https://github.com/paulbui
-// @version      0.1
+// @version      0.2
 // @description  Add tabs for different courses at the top of the screen
 // @author       Paul Bui
 // @match        https://*.instructure.com/courses/*
 // @grant        none
+// @updateURL    https://github.com/paulbui/canvas-tweaks/raw/master/course_shortcuts/course_shortcuts.user.js
 // ==/UserScript==
 
 (function() {
@@ -13,15 +14,19 @@
 
   //YOU SHOULD MODIFY THE FOLLOWING LIST OF COURSE NAMES AND COURSE ID NUMBERS!
   //"COURSE_NAME" : COURSE_ID # that is found in the URL after the word "courses"
+  //A comma should be at the end of the line unless it's the last entry
   var courseNumDict = {
       "AP CS A" : 59098,
       "IB CS 1" : 59216,
       "IB CS 2" : 59218
+      //You can add more courses...
   };
 
   //DO NOT MODIFY ANYTHING BELOW THIS COMMENT
 
-  if (document.location.href.indexOf("speed_grader") != -1 || document.body.classList.contains("is-inside-submission-frame"))
+  if (document.location.href.indexOf("speed_grader") != -1
+        || document.body.classList.contains("quizzes-speedgrader")
+        || document.body.classList.contains("is-inside-submission-frame"))
   {
       return;
   }
