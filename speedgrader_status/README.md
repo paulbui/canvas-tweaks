@@ -1,6 +1,9 @@
 # Description
 The speedgrader_status userscript adds the ability to modify the assignment status (Late, Missing, Excused) within the Speedgrader. You may also modify the number of days late
 
+### Source code forked from
+https://blog.ohheybrian.com/2019/05/adding-assignment-statuses-to-the-canvas-speedgrader/
+
 # Installation Instructions
 1. Install the https://www.tampermonkey.net/ extension or add-on
 2. Click on [Speedgrader Status raw install](https://github.com/paulbui/canvas-tweaks/raw/master/speedgrader_status/speedgrader_status.user.js)
@@ -9,6 +12,3 @@ The speedgrader_status userscript adds the ability to modify the assignment stat
 
 # After installation
 ![Speedgrader status](https://github.com/paulbui/canvas-tweaks/raw/master/speedgrader_status/img/speedgraderStatus.png)
-
-# Source code forked from
-https://blog.ohheybrian.com/2019/05/adding-assignment-statuses-to-the-canvas-speedgrader/
