@@ -10,3 +10,6 @@ Tampermonkey / Greasemonkey Userscripts for Instructure Canvas
 
 ## Modules
 * The Condensed MAQ Layout userscript overrides the Canvas Modules, Assignments, & Quizzes pages' CSS to reduce the margins, padding, and font-size for a more condensed layout
+
+## Speedgrader Status
+* Adds the ability to modify the assignment status (Late, Missing, Excused) within the Speedgrader. You may also modify the number of days late
