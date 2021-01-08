@@ -4,7 +4,7 @@
 // @version      0.5
 // @description  Modify Canvas assignment statuses and late days within SpeedGrader
 // @author       Paul Bui
-// @include      /^https://.*\.instructure\.com/
+// @include      https://*.instructure.com/courses/*/gradebook/speed_grader?*
 // @grant        none
 // ==/UserScript==
 
