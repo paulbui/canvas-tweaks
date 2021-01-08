@@ -232,7 +232,10 @@
                   originalStatus = resp.late_policy_status;
 
                   if (customSelect.value != "late")
+                  {
+                      document.querySelector("#days_late").value = "";
                       document.querySelector("#days_late").disabled = true;
+                  }
                   else
                       document.querySelector("#days_late").value = (seconds_late / SECONDS_PER_DAY).toFixed(2);
 
