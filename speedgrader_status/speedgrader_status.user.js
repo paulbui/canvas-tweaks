@@ -111,7 +111,7 @@
                     //console.log(resp);
                     seconds_late = resp.seconds_late;
 
-                    if (status == "late" || originalStatus == "late")
+                    if (status === "late" || originalStatus === "late")
                         location.reload();
                     else
                         $(`#confirm`).animate({
