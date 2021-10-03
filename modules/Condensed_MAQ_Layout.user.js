@@ -4,6 +4,7 @@
 // @version      0.2
 // @description  Condensed layout of the Canvas Modules, Assignments, & Quizzes pages
 // @author       Paul Bui
+// @match        http*://*/courses/*
 // @match        http*://*/courses/*/modules
 // @match        http*://*/courses/*/assignments
 // @match        http*://*/courses/*/quizzes
