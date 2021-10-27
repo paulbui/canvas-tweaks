@@ -1,3 +1,5 @@
+[October 27th PL Slides](https://docs.google.com/presentation/d/1IKFC5JAN9a41d6E4FJ05OuMo2mIdMJn2JPTMZclHe3A/edit?usp=sharing)
+
 # canvas-tweaks
 Tampermonkey / Greasemonkey Userscripts for Instructure Canvas
 
