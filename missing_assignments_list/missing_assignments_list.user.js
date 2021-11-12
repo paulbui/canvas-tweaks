@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Missing Assignments List
 // @namespace    https://github.com/paulbui/canvas-tweaks
-// @version      0.1
+// @version      0.21
 // @description  Adds list of missing assignments to right sidebar
 // @author       Paul Bui
 // @match        http*://*.instructure.com
