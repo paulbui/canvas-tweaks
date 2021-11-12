@@ -4,37 +4,117 @@
 // @version      0.1
 // @description  Adds list of missing assignments to right sidebar
 // @author       Paul Bui
+// @match        http*://*.instructure.com
 // @match        http*://*.instructure.com/courses/*
 // @grant        none
-// @run-at document-end
-// @require      file:///Users/wlcs/canvas-tweaks/missing_assignments_list/missing_assignments_list.user.js
+// @run-at       document-idle
 // ==/UserScript==
 
 (function () {
-  'use strict';
+    'use strict';
 
-  console.log("hello");
+    let hostname = window.location.hostname;
+    //list favorite courses
+    let favoriteCourses;
+    let favoriteCourseIds = {};
+    fetch("https://"+hostname+"/api/v1/users/self/favorites/courses", { credentials: 'same-origin' })
+        .then(response => response.json())
+        .then(data => {
+        favoriteCourses = data;
+        favoriteCourses.forEach(course => {
+            favoriteCourseIds[course.id] = { name: course.name, missingAssignments : [], course : course }
+        });
+    }).catch(err => {
+        console.log("Failed to fetch favorite courses");
+    });
 
-  const sidebar = document.getElementById("course_show_secondary");
-  //const courseShowDiv = document.getElementById("course_show_secondary");
-  //const todoDiv = document.getElementsByClassName("todo-list")[0];
+    //get missing assignments
+    var coursesWithMissing = {};
+    var missingAssignments;
+    fetch("https://"+hostname+"/api/v1/users/self/missing_submissions", { credentials: 'same-origin' })
+        .then(response => response.json())
+        .then(data => {
+        missingAssignments = data;
+        //console.log(Object.keys(missingAssignments).length);
+        missingAssignments.forEach(assignment => {
+            if (favoriteCourseIds[assignment.course_id.toString()])
+            {
+                //favoriteCourseIds[assignment.course_id.toString()].missingCount++;
+                favoriteCourseIds[assignment.course_id.toString()].missingAssignments.push(assignment);
+                if (coursesWithMissing[assignment.course_id.toString()])
+                {
+                    coursesWithMissing[assignment.course_id.toString()]++;
+                }
+                else
+                {
+                    coursesWithMissing[assignment.course_id.toString()] = 1;
+                }
+            }
+        });
 
-  const missingDiv = document.createElement("div");
-  missingDiv.id = "missing-list";
-  missingDiv.className = "todo-list";
+        //FIXME: Make the following code async callback b/c of delayed fulfilled Promise above
 
-  const missingHeader = document.createElement("h2");
-  missingHeader.className = "h2 shared-space";
-  missingHeader.style = "color:red";
-  missingHeader.innerHTML = "Missing Assignments"
-  missingDiv.appendChild(missingHeader);
+        let rightSideBar = document.getElementById("right-side");
+        let sidebar = document.getElementById("right-side-wrapper");
+        const missingDiv = document.createElement("div");
+        missingDiv.id = "missing-list";
+        missingDiv.style = "font-size: 0.9rem; color:red";
+        missingDiv.className = "todo-list";
 
-  const missingList = document.createElement("ul");
-  missingList.style = "margin: 0px; list-style-type: none";
-  missingList.innerHTML = "<li>Test</li>";
-  missingDiv.appendChild(missingList);
+        const missingHeader = document.createElement("h4");
+        missingHeader.className = "todo-list-header";
+        missingHeader.style = "color:red";
+        missingHeader.innerHTML = "Missing Assignments"
+        missingDiv.appendChild(missingHeader);
 
-  //sidebar.insertBefore(missingDiv, todoDiv);
-  sidebar.appendChild(missingDiv);
+        const missingList = document.createElement("ul");
+        missingList.style = "margin: 0px; list-style-type: none";
 
+        if (window.location.pathname === "/")
+        {
+            if (Object.keys(coursesWithMissing).length === 0)
+            {
+                missingList.innerHTML = "<li>None</li>";
+            }
+            else
+            {
+                missingList.innerHTML += "<li style='margin-bottom: 8px; '>"+Object.keys(coursesWithMissing).length+" missing assignments total:</li>";
+                for( const key of Object.keys(coursesWithMissing)) {
+                    missingList.innerHTML += "<li style='margin-bottom: 8px'>";
+                    missingList.innerHTML += "<a style='color:red' href=\"" + window.location.href + "courses/" + key + "\">"
+                        + coursesWithMissing[key] + " - " + favoriteCourseIds[key].name + "</a>"
+                    missingList.innerHTML += "</li>";
+                }
+            }
+        }
+        else //must be in a course
+        {
+            let courseId = window.location.pathname.split("/")[2];
+            console.log("Inside course# "+courseId);
+            console.log(coursesWithMissing[courseId] + " missing assignment");
+            if (!coursesWithMissing[courseId])
+            {
+                missingList.innerHTML = "<li>None</li>";
+            }
+            else
+            {
+                //iterate through missing assignments here
+                for(const missingAssignment of favoriteCourseIds[courseId.toString()].missingAssignments)
+                {
+                    missingList.innerHTML += "<li style='margin-bottom: 8px'>";
+                    missingList.innerHTML += "<a style='color:red' href=\"" + missingAssignment.html_url + "\">"
+                        + missingAssignment.name + "</a>"
+                    missingList.innerHTML += "</li>";
+                    console.log(missingAssignment.name);
+                    console.log(missingAssignment.html_url);
+                }
+            }
+        }
+
+        missingDiv.appendChild(missingList);
+        sidebar.insertBefore(missingDiv, rightSideBar);
+
+    }).catch(err => {
+        console.log("Failed to fetch missing assignments courses");
+    });
 })();
