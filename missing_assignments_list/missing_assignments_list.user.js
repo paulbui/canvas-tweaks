@@ -28,8 +28,8 @@
         });
 
         //get missing assignments
-        var coursesWithMissing = {};
-        var missingAssignments;
+        let coursesWithMissing = {};
+        let missingAssignments;
         fetch("https://"+hostname+"/api/v1/users/self/missing_submissions", { credentials: 'same-origin' })
             .then(response => response.json())
             .then(data => {
