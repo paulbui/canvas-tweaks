@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Missing Assignments List
 // @namespace    https://github.com/paulbui/canvas-tweaks
-// @version      0.2
+// @version      0.1
 // @description  Adds list of missing assignments to right sidebar
 // @author       Paul Bui
 // @match        http*://*.instructure.com
@@ -29,6 +29,7 @@
 
         //get missing assignments
         let coursesWithMissing = {};
+        let totalMissingCount = 0;
         let missingAssignments;
         fetch("https://"+hostname+"/api/v1/users/self/missing_submissions", { credentials: 'same-origin' })
             .then(response => response.json())
@@ -48,6 +49,7 @@
                     {
                         coursesWithMissing[assignment.course_id.toString()] = 1;
                     }
+                    totalMissingCount++;
                 }
             });
 
@@ -75,7 +77,7 @@
                 }
                 else
                 {
-                    missingList.innerHTML += "<li style='margin-bottom: 8px; '>"+Object.keys(coursesWithMissing).length+" missing assignments total:</li>";
+                    missingList.innerHTML += "<li style='margin-bottom: 8px; '>"+totalMissingCount+" missing assignments total:</li>";
                     for( const key of Object.keys(coursesWithMissing)) {
                         missingList.innerHTML += "<li style='margin-bottom: 8px'>";
                         missingList.innerHTML += "<a style='color:red' href=\"" + window.location.href + "courses/" + key + "\">"
