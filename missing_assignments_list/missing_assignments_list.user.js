@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Missing Assignments List
 // @namespace    https://github.com/paulbui/canvas-tweaks
-// @version      0.22
+// @version      0.23
 // @updateURL    https://raw.githubusercontent.com/paulbui/canvas-tweaks/master/missing_assignments_list/missing_assignments_list.user.js
 // @description  Adds list of missing assignments to right sidebar
 // @author       Paul Bui
@@ -58,17 +58,17 @@
             let sidebar = document.getElementById("right-side-wrapper");
             const missingDiv = document.createElement("div");
             missingDiv.id = "missing-list";
-            missingDiv.style = "font-size: 0.9rem; color:red";
+            missingDiv.style = "font-size: 0.9rem; color:" + (totalMissingCount > 0 ? "red" : "green");
             missingDiv.className = "todo-list";
 
             const missingHeader = document.createElement("h4");
             missingHeader.className = "todo-list-header";
-            missingHeader.style = "color:red";
-            missingHeader.innerHTML = "Missing Assignments"
+            missingHeader.style = "color:" + (totalMissingCount > 0 ? "red" : "green");
+            missingHeader.innerHTML = "Missing Assignments";
             missingDiv.appendChild(missingHeader);
 
             const missingList = document.createElement("ul");
-            missingList.style = "margin: 0px; list-style-type: none";
+            missingList.style = "margin: 0px; list-style-type: none;";
 
             if (window.location.pathname === "/")
             {
@@ -94,6 +94,8 @@
                 console.log(coursesWithMissing[courseId] + " missing assignment");
                 if (!coursesWithMissing[courseId])
                 {
+                    missingHeader.style = "color:green";
+                    missingList.style = "margin: 0px; list-style-type: none; color:green";
                     missingList.innerHTML = "<li>None</li>";
                 }
                 else
