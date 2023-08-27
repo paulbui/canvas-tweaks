@@ -51,6 +51,12 @@
               const newURL = URL.replace(regex, "$1"+courseNumDict[courseStr]+"$2");
               window.location.href = newURL;
           };
+          newA.addEventListener('auxclick', function() {
+              const regex = /(.*\/courses\/)\d+(.*)/;
+              const URL = document.location.href;
+              const newURL = URL.replace(regex, "$1"+courseNumDict[courseStr]+"$2");
+              window.open(newURL, '_blank');
+          });
           newDiv.append(newA);
       }
 
