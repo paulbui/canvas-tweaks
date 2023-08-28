@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Course Shortcuts
 // @namespace    https://github.com/paulbui
-// @version      0.2
+// @version      0.4
 // @description  Add tabs for different courses at the top of the screen
 // @author       Paul Bui
 // @match        https://*.instructure.com/courses/*
