@@ -8,4 +8,3 @@ The speedgrader_load_ungraded userscript adds a button to advance to the next un
 5. If you wish to turn off the userscript, then go to the TamperMonkey extension, untoggle the script, and refresh the page
 
 # After installation
-![Speedgrader status](https://github.com/paulbui/canvas-tweaks/raw/master/speedgrader_status/img/speedgraderStatus.png)
