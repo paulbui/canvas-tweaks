@@ -3,7 +3,7 @@
 # canvas-tweaks
 Tampermonkey / Greasemonkey Userscripts for Instructure Canvas
 
-## Course Shortcuts
+## [Course Shortcuts](course_shortcuts)
 * Adds shortcuts to your courses to the top of your Canvas pages
 
 ## Grade Box Tweaks
