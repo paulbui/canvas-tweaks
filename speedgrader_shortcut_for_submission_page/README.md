@@ -6,3 +6,6 @@ The speedgrader_shortcut_for_submission_page userscript adds a shortcut button t
 2. Click here on [Speedgrader Shortcut Button raw install](https://github.com/paulbui/canvas-tweaks/raw/master/speedgrader_shortcut_for_submission_page/speedgrader_shortcut_for_submission_page.user.js)
 3. TamperMonkey will detect the file automatically and click on "Install"
 5. If you wish to turn off the userscript, then go to the TamperMonkey extension, untoggle the script, and refresh the page
+
+# After installation
+![Speedgrader button](https://github.com/paulbui/canvas-tweaks/raw/master/speedgrader_shortcut_for_submission_page/screenshot_speedgrader_button.png)
