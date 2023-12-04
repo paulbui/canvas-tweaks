@@ -14,24 +14,30 @@
   const base = document.location.origin;
 
   // A little hack to quickly extract the course ID from the URL
-  let parser = document.createElement("a");
-  parser.href = window.location.href;
-  var course = parser.pathname.split("/")[2];
+  // let parser = document.createElement("a");
+  // parser.href = window.location.href;
+  // var course = parser.pathname.split("/")[2];
 
-  //parse student ID
-  //window.location.href.match(/student_id=\d+$/)
-  //url.substr(90+"student_id".length+1)
-
-
-  // Get current student name
-  let currentStudentButton = document.getElementById(
-    "students_selectmenu-button"
-  );
-
-    let currentStudentName = 
+  //parse current student ID from URL
+  let IDregexMatch = window.location.href.match(/\d+$/);
+  let currentStudentID = IDregexMatch[0];
 
   let students_selectmenu = document.getElementById("students_selectmenu");
-  for (let i = 0; students_selectmenu.clientHeight; i++) {
-    let current_child = students;
+  let selectMenuChildren = students_selectmenu.children;
+  for (let i = 0; selectMenuChildren.length; i++) {
+    let current_child = selectMenuChildren[i];
+
+    //found current child in list, then iterate to find next unread
+    if (current_child.value == currentStudentID) {
+      for (j = i + 1; j < selectMenuChildren.length; j++) {
+        if (students_selectmenu.children[j].classList.contains("not_graded")) {
+          window.location.href =
+            window.location.href.substring(0, IDregexMatch["index"]) +
+            students_selectmenu.children[j].value;
+          break;
+        }
+      }
+      break;
+    }
   }
 })();
