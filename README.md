@@ -15,7 +15,8 @@ Tampermonkey / Greasemonkey Userscripts for Instructure Canvas
 * Adds a shortcut to Speedgrader on an assignment's submission page
 
 ## PD Session Slides
-* [October 27th PL Slides](https://docs.google.com/presentation/d/1IKFC5JAN9a41d6E4FJ05OuMo2mIdMJn2JPTMZclHe3A/edit?usp=sharing)
+* [December 6th, 2023 PL Slides](https://docs.google.com/presentation/d/16GYLgJu2DGkzhOIdYk8ZAoZAxKW6uw4voZJtfC0bCsA/edit?usp=sharing)
+* [October 27th, 2021 PL Slides](https://docs.google.com/presentation/d/1IKFC5JAN9a41d6E4FJ05OuMo2mIdMJn2JPTMZclHe3A/edit?usp=sharing)
 
 ### TODO List:
 * Button in speedgrader to advance to the next ungraded student submission
